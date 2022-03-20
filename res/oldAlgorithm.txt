@@ -1,0 +1,47 @@
+    def length_algorithm(self) -> NamedTuple:
+        count = self._length // self.items_count
+        reminder = self._length % self.items_count
+        digit_count = count
+
+        if reminder:
+            digit_count = reminder + count
+            
+        if digit_count > 10:
+            self.digits *= 2
+            self.digits += random.sample(self.digits, 2)
+
+        result = namedtuple('Counts', ['count', 'digit_count'])
+        return result(count=count, digit_count=digit_count)
+
+    def shuffle(self) -> None:
+        for item in [self.uppercase, self.lowercase, 
+                     self.digits, self.symbols]:
+            random.shuffle(item)
+
+    def generate(self) -> Text:
+        values = self.check_boxes
+        keys = [self.uppercase, self.lowercase, 
+                self.digits, self.symbols]
+        suffix = list()
+        lengths = self.length_algorithm()
+
+        for i in range(len(keys)):
+            # self.shuffle()
+            if (keys[i][0]).isdigit():
+                length = lengths.digit_count
+            elif 'A' in keys[i]:
+                length = lengths.count - 1
+            else:
+                length = lengths.count
+
+            if values[i]:
+                part = random.sample(keys[i], length)
+                map(keys[i].remove, part)
+                suffix.extend(part)
+            random.shuffle(suffix)
+
+        random.shuffle(suffix)
+        prefix = random.choices(self.uppercase)
+        password = ''.join(prefix+suffix)
+        self._is_running = False
+        return password

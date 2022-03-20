@@ -1,0 +1,3 @@
+{
+    "files": ["qml/components/CustomListView.qml","qml/components/Tutorial.qml","qml/components/CustomSpinBox.qml","qml/components/Notification.qml","qml/components/CustomHeader.qml","qml/components/CustomDelayButton.qml","qml/components/CustomCheckBox.qml","qml/components/ThemeSwitch.qml","qml/main.qml","qml/components/CustomRoundButton.qml","qml/components/CustomSlider.qml","qml/components/Tour.qml","qml/components/WarningMsg.qml","qml/components/CustomToolButton.qml","main.py","qml/components/CustomFooter.qml","qml/components/CustomBusyIdicator.qml","qml/components/Mask.qml"]
+}

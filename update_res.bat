@@ -1,0 +1,1 @@
+pyside2-rcc res.qrc -o src/res_rc.py

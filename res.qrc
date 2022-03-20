@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/">
+        <file alias="fontello">res/fonts/fontello.ttf</file>
+        <file alias="quit">res/images/quit.svg</file>
+        <file alias="minimize">res/images/minimize.svg</file>
+        <file alias="menu">res/images/menu.svg</file>
+        <file alias="logo">res/images/logo.jpg</file>
+        <file alias="lock">res/images/lock.gif</file>
+        <file alias="password">res/images/password.svg</file>
+    </qresource>
+</RCC>
