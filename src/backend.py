@@ -78,7 +78,7 @@ class Backend(Generator, Bsignals, WorkerSignals):
         # self.lengthChanged.connect(lambda var: print('Length', var))
         # self.quantityChanged.connect(lambda var: print('Quantity', var))
 
-    def error_occored(self, error) -> None:
+    def error_occurred(self, error) -> None:
         self.error.emit(error)
         self._is_running = False
 
@@ -128,7 +128,7 @@ class Backend(Generator, Bsignals, WorkerSignals):
         worker = Worker(func=self.generate, quantity=self._quantity)
         # worker.signals.finished.connect(lambda: print(f'Finish'))
         # worker.signals.progress.connect()
-        worker.signals.error.connect(self.error_occored)
+        worker.signals.error.connect(self.error_occurred)
         worker.signals.result.connect(self.result_handle)
         # Execute
         self.threadpool.start(worker)
